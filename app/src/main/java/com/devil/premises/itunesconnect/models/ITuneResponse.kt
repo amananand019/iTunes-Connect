@@ -1,4 +1,4 @@
-package com.devil.premises.itunesconnect
+package com.devil.premises.itunesconnect.models
 
 data class ITuneResponse(
     val resultCount: Int,

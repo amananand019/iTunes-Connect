@@ -1,6 +1,18 @@
-package com.devil.premises.itunesconnect
+package com.devil.premises.itunesconnect.models
 
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+
+@Entity(
+    tableName = "results"
+)
 data class Result(
+
+    //add id and make it null bcz it will be only assigned to the result entity
+    //which will be made as favourite and will be saved in room persistence lib
+    @PrimaryKey(autoGenerate = true)
+    var id:Int?=null,
+
     val artistId: Int,
     val artistName: String,
     val artistViewUrl: String,

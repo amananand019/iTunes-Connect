@@ -1,6 +1,6 @@
 package com.devil.premises.itunesconnect.api
 
-import com.devil.premises.itunesconnect.ITuneResponse
+import com.devil.premises.itunesconnect.models.ITuneResponse
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Query
