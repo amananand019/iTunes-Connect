@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
         val navController = findNavController(R.id.mainNavHostFragment)
 
         val iTunesRepository = ITunesRepository(ResultDatabase(this))
-        val viewModelProviderFactory = ITunesViewModelProviderFactory(iTunesRepository)
+        val viewModelProviderFactory = ITunesViewModelProviderFactory(application, iTunesRepository)
         viewModel = ViewModelProvider(this, viewModelProviderFactory).get(ITunesViewModel::class.java)
         bottomNavigationView.setupWithNavController(navController)
     }

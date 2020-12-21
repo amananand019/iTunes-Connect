@@ -36,6 +36,7 @@ class DetailFragment : Fragment(R.layout.fragment_detail) {
         val genreName = view.findViewById<TextView>(R.id.txt_GenreName)
         val releaseDate = view.findViewById<TextView>(R.id.txt_ReleaseDate)
         val play = view.findViewById<MaterialButton>(R.id.btn_Play)
+        play.visibility = View.INVISIBLE
         val fab = view.findViewById<FloatingActionButton>(R.id.fabFavourite)
 
         val args = arguments?.let { DetailFragmentArgs.fromBundle(it) }
@@ -45,6 +46,10 @@ class DetailFragment : Fragment(R.layout.fragment_detail) {
         collectionName.text = result?.collectionName
         releaseDate.text = result?.releaseDate
         genreName.text = result?.primaryGenreName
+
+        if(viewModel.hasInternetConnection()){
+            play.visibility = View.VISIBLE
+        }
 
         if(result?.isStreamable == false){
             play.visibility = View.INVISIBLE
