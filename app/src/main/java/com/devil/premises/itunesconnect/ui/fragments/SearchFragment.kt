@@ -8,6 +8,7 @@ import android.widget.TextView
 import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.devil.premises.itunesconnect.R
@@ -38,6 +39,16 @@ class SearchFragment : Fragment(R.layout.fragment_search) {
         rvSearch = view.findViewById(R.id.rvSearch)
         message = view.findViewById(R.id.txt_message)
         setupRecyclerView()
+
+        iTunesAdapter.setOnItemClickListener {
+            val bundle = Bundle().apply {
+                putSerializable("result",it)
+            }
+            findNavController().navigate(R.id.action_searchFragment2_to_detailFragment, bundle)
+
+//            val action = SearchFragmentDirections.actionSearchFragment2ToDetailFragment(it)
+//            findNavController().navigate(action)
+        }
 
         var job: Job? = null
         searchText.addTextChangedListener{ editable ->

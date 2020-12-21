@@ -4,6 +4,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.devil.premises.itunesconnect.models.ITuneResponse
+import com.devil.premises.itunesconnect.models.Result
 import com.devil.premises.itunesconnect.repository.ITunesRepository
 import com.devil.premises.itunesconnect.util.Resource
 import kotlinx.coroutines.launch
@@ -25,5 +26,15 @@ class ITunesViewModel(private val iTunesRepository: ITunesRepository) : ViewMode
             }
         }
         return Resource.Error(response.message())
+    }
+
+    fun saveResult(result: Result) = viewModelScope.launch {
+        iTunesRepository.upsert(result)
+    }
+
+    fun  getSavedITunes() = iTunesRepository.getSavedITunes()
+
+    fun  deleteResults(result: Result) = viewModelScope.launch {
+        iTunesRepository.deleteResult(result)
     }
 }

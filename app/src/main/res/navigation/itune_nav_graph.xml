@@ -31,5 +31,9 @@
     <fragment
         android:id="@+id/detailFragment"
         android:name="com.devil.premises.itunesconnect.ui.fragments.DetailFragment"
-        android:label="DetailFragment" />
+        android:label="DetailFragment" >
+        <argument
+            android:name="result"
+            app:argType="com.devil.premises.itunesconnect.models.Result" />
+    </fragment>
 </navigation>
