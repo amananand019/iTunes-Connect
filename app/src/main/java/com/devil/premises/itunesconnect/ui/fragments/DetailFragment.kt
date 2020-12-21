@@ -24,6 +24,7 @@ class DetailFragment : Fragment(R.layout.fragment_detail) {
 
     lateinit var viewModel: ITunesViewModel
     private lateinit var mediaPlayer: MediaPlayer
+    private lateinit var play: MaterialButton
 
     @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -35,7 +36,7 @@ class DetailFragment : Fragment(R.layout.fragment_detail) {
         val collectionName = view.findViewById<TextView>(R.id.txt_CollectionName)
         val genreName = view.findViewById<TextView>(R.id.txt_GenreName)
         val releaseDate = view.findViewById<TextView>(R.id.txt_ReleaseDate)
-        val play = view.findViewById<MaterialButton>(R.id.btn_Play)
+        play = view.findViewById<MaterialButton>(R.id.btn_Play)
         play.visibility = View.INVISIBLE
         val fab = view.findViewById<FloatingActionButton>(R.id.fabFavourite)
 
@@ -97,6 +98,7 @@ class DetailFragment : Fragment(R.layout.fragment_detail) {
     override fun onPause() {
         if (mediaPlayer.isPlaying)
             mediaPlayer.stop()
+            play.text = "Play Demo"
         super.onPause()
     }
 }
