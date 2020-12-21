@@ -1,4 +1,4 @@
-package com.devil.premises.itunesconnect.ui
+package com.devil.premises.itunesconnect.viewmodels
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -9,12 +9,13 @@ import com.devil.premises.itunesconnect.util.Resource
 import kotlinx.coroutines.launch
 import retrofit2.Response
 
-class ITunesViewModel(val itunesRepository: ITunesRepository) : ViewModel() {
+class ITunesViewModel(private val iTunesRepository: ITunesRepository) : ViewModel() {
     val searchITunes: MutableLiveData<Resource<ITuneResponse>> = MutableLiveData()
 
     fun searchITunes(searchQuery: String) = viewModelScope.launch {
         searchITunes.postValue(Resource.Loading())
-        val response = itunesRepository.searchITune(searchQuery)
+        val response = iTunesRepository.searchITune(searchQuery)
+        searchITunes.postValue(handleSearchITuneResponse(response))
     }
 
     private fun handleSearchITuneResponse(response: Response<ITuneResponse>): Resource<ITuneResponse>{

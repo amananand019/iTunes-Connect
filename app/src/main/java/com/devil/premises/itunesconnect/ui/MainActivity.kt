@@ -8,6 +8,8 @@ import androidx.navigation.ui.setupWithNavController
 import com.devil.premises.itunesconnect.R
 import com.devil.premises.itunesconnect.db.ResultDatabase
 import com.devil.premises.itunesconnect.repository.ITunesRepository
+import com.devil.premises.itunesconnect.viewmodels.ITunesViewModel
+import com.devil.premises.itunesconnect.viewmodels.ITunesViewModelProviderFactory
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {

@@ -11,4 +11,5 @@
     <string name="genre">Genre:</string>
     <string name="dummy_genre_name">Bollywood</string>
     <string name="play_demo">Play Demo</string>
+    <string name="not_searched_yet">Not Searched Yet</string>
 </resources>

@@ -7,7 +7,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class RetrofitInstance {
     companion object{
-        const val BASE_URL="https://itunes.apple.com"
+        private const val BASE_URL="https://itunes.apple.com"
         private val retrofit by lazy {
             val logging = HttpLoggingInterceptor()
             logging.setLevel(HttpLoggingInterceptor.Level.BODY)
@@ -22,8 +22,8 @@ class RetrofitInstance {
                 .build()
         }
 
-        val api by lazy {
-            retrofit.create(ITuneAPI::class.java)
+        val api: ITuneAPI by lazy {
+            return@lazy retrofit.create(ITuneAPI::class.java)
         }
     }
 }

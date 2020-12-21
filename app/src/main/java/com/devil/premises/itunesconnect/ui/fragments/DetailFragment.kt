@@ -4,7 +4,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import com.devil.premises.itunesconnect.R
-import com.devil.premises.itunesconnect.ui.ITunesViewModel
+import com.devil.premises.itunesconnect.viewmodels.ITunesViewModel
 import com.devil.premises.itunesconnect.ui.MainActivity
 
 class DetailFragment : Fragment(R.layout.fragment_detail) {

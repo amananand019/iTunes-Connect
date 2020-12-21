@@ -7,7 +7,6 @@ import androidx.room.PrimaryKey
     tableName = "results"
 )
 data class Result(
-
     //add id and make it null bcz it will be only assigned to the result entity
     //which will be made as favourite and will be saved in room persistence lib
     @PrimaryKey(autoGenerate = true)

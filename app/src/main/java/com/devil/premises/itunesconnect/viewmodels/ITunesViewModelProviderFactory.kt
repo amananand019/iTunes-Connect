@@ -1,4 +1,4 @@
-package com.devil.premises.itunesconnect.ui
+package com.devil.premises.itunesconnect.viewmodels
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
