@@ -10,7 +10,7 @@ import java.io.Serializable
 data class Result(
     //add id and make it null bcz it will be only assigned to the result entity
     //which will be made as favourite and will be saved in room persistence lib
-    @PrimaryKey(autoGenerate = true)
+//    @PrimaryKey(autoGenerate = true)
     var id:Int?=null,
 
     val artistId: Int?,
@@ -40,6 +40,7 @@ data class Result(
     val trackCensoredName: String?,
     val trackCount: Int?,
     val trackExplicitness: String?,
+    @PrimaryKey
     val trackId: Int?,
     val trackName: String?,
     val trackNumber: Int?,

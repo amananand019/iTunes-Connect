@@ -9,7 +9,7 @@ import com.devil.premises.itunesconnect.models.Result
 
 @Database(
         entities = [Result::class],
-        version = 2
+        version = 3
 )
 abstract class ResultDatabase: RoomDatabase() {
     abstract fun getResultDao(): ResultDao

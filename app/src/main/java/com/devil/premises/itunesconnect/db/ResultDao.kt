@@ -9,7 +9,7 @@ interface ResultDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun upsert(result: Result): Long
 
-    @Query("SELECT * FROM results")
+    @Query("SELECT * FROM results order by id")
     fun getAllResults(): LiveData<List<Result>>
 
     @Delete
